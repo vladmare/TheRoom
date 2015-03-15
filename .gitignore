@@ -41,3 +41,10 @@ $RECYCLE.BIN/
 Network Trash Folder
 Temporary Items
 .apdisk
+*.suo
+
+# Bin files
+TheRoom/bin/**
+TheRoom/obj/**
+
+TheRoom/Properties/**

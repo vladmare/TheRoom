@@ -48,3 +48,6 @@ TheRoom/bin/**
 TheRoom/obj/**
 
 TheRoom/Properties/**
+
+# Nuget packages
+packages/**

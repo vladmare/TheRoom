@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using TheRoom.Models;
+using AspNet.Identity.MongoDB;
 
 namespace TheRoom.Controllers
 {

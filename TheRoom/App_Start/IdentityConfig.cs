@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNet.Identity;
-using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security;
@@ -10,6 +9,8 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using System.Web;
 using TheRoom.Models;
+using AspNet.Identity.MongoDB;
+using TheRoom.App_Start;
 
 namespace TheRoom
 {
@@ -41,7 +42,7 @@ namespace TheRoom
 
     public static ApplicationUserManager Create(IdentityFactoryOptions<ApplicationUserManager> options, IOwinContext context)
     {
-      var manager = new ApplicationUserManager(new UserStore<ApplicationUser>(context.Get<ApplicationDbContext>()));
+      var manager = new ApplicationUserManager(new UserStore<ApplicationUser>(context.Get<ApplicationIdentityContext>()));
       // Configure validation logic for usernames
       manager.UserValidator = new UserValidator<ApplicationUser>(manager)
       {
